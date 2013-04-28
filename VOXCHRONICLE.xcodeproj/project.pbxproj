@@ -1379,6 +1379,8 @@
 		B002ECC417293FD900FEE88F /* typeChange_last.lua in Resources */ = {isa = PBXBuildFile; fileRef = B002ECC317293FD900FEE88F /* typeChange_last.lua */; };
 		B002ECC617297A1700FEE88F /* equip_last.lua in Resources */ = {isa = PBXBuildFile; fileRef = B002ECC517297A1700FEE88F /* equip_last.lua */; };
 		B002ECCA17297EA400FEE88F /* thunder_last.lua in Resources */ = {isa = PBXBuildFile; fileRef = B002ECC917297EA400FEE88F /* thunder_last.lua */; };
+		2AC94B2D172D8FD0002857A8 /* concat.lua in Resources */ = {isa = PBXBuildFile; fileRef = 2AC94B2C172D8FD0002857A8 /* concat.lua */; };
+		2AC94B2F172D9FFD002857A8 /* timezone.lua in Resources */ = {isa = PBXBuildFile; fileRef = 2AC94B2E172D9FFC002857A8 /* timezone.lua */; };
 		B00634D516D876FB008D8E25 /* testMap.lua in Resources */ = {isa = PBXBuildFile; fileRef = B00634D416D876FA008D8E25 /* testMap.lua */; };
 		B0175500170353CE008053BB /* gargoyle3B2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B01754FF170353CE008053BB /* gargoyle3B2.lua */; };
 		B017550A1706E23A008053BB /* dragon2B0.lua in Resources */ = {isa = PBXBuildFile; fileRef = B01755091706E23A008053BB /* dragon2B0.lua */; };
@@ -3215,6 +3217,8 @@
 		B002ECC317293FD900FEE88F /* typeChange_last.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = typeChange_last.lua; path = enemySkills/typeChange_last.lua; sourceTree = "<group>"; };
 		B002ECC517297A1700FEE88F /* equip_last.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = equip_last.lua; path = enemySkills/equip_last.lua; sourceTree = "<group>"; };
 		B002ECC917297EA400FEE88F /* thunder_last.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = thunder_last.lua; path = enemySkills/thunder_last.lua; sourceTree = "<group>"; };
+		2AC94B2C172D8FD0002857A8 /* concat.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = concat.lua; sourceTree = "<group>"; };
+		2AC94B2E172D9FFC002857A8 /* timezone.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = timezone.lua; sourceTree = "<group>"; };
 		B00634D416D876FA008D8E25 /* testMap.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testMap.lua; path = map/testMap.lua; sourceTree = "<group>"; };
 		B01754FF170353CE008053BB /* gargoyle3B2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gargoyle3B2.lua; sourceTree = "<group>"; };
 		B01755091706E23A008053BB /* dragon2B0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dragon2B0.lua; sourceTree = "<group>"; };
@@ -4499,6 +4503,8 @@
 			isa = PBXGroup;
 			children = (
 				07F20F7A17114F3C0099ACD8 /* achievement.lua */,
+				2AC94B2E172D9FFC002857A8 /* timezone.lua */,
+				2AC94B2C172D8FD0002857A8 /* concat.lua */,
 				07FD921C1621097700E74459 /* character */,
 				07D8D649169F3BD900B646E5 /* controller.lua */,
 				079F89A6169EE596001357B5 /* debug.lua */,
@@ -7188,6 +7194,8 @@
 				B002ECC417293FD900FEE88F /* typeChange_last.lua in Resources */,
 				B002ECC617297A1700FEE88F /* equip_last.lua in Resources */,
 				B002ECCA17297EA400FEE88F /* thunder_last.lua in Resources */,
+				2AC94B2D172D8FD0002857A8 /* concat.lua in Resources */,
+				2AC94B2F172D9FFD002857A8 /* timezone.lua in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

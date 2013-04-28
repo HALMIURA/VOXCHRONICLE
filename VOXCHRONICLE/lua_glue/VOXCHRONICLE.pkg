@@ -253,6 +253,7 @@ class Map : public CCObject, public IRegister {
 	int getMaxLevel();
 	int getInitialLevel();
 	string getName();
+	string getIdentifier();
 	bool isBossStage();
 	void changeBackgroundImage(const char* imageName);
 };

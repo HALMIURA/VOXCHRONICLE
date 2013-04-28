@@ -1,6 +1,6 @@
 /*
 ** Lua binding: VOXCHRONICLE
-** Generated automatically by tolua++-1.0.92 on Sun Apr 28 20:01:59 2013.
+** Generated automatically by tolua++-1.0.92 on Mon Apr 29 18:43:08 2013.
 */
 
 #ifndef __cplusplus
@@ -3054,6 +3054,38 @@ static int tolua_VOXCHRONICLE_Map_getName00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getIdentifier of class  Map */
+#ifndef TOLUA_DISABLE_tolua_VOXCHRONICLE_Map_getIdentifier00
+static int tolua_VOXCHRONICLE_Map_getIdentifier00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Map",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Map* self = (Map*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getIdentifier'", NULL);
+#endif
+  {
+   string tolua_ret = (string)  self->getIdentifier();
+   tolua_pushcppstring(tolua_S,(const char*)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getIdentifier'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: isBossStage of class  Map */
 #ifndef TOLUA_DISABLE_tolua_VOXCHRONICLE_Map_isBossStage00
 static int tolua_VOXCHRONICLE_Map_isBossStage00(lua_State* tolua_S)
@@ -3946,6 +3978,7 @@ TOLUA_API int tolua_VOXCHRONICLE_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getMaxLevel",tolua_VOXCHRONICLE_Map_getMaxLevel00);
    tolua_function(tolua_S,"getInitialLevel",tolua_VOXCHRONICLE_Map_getInitialLevel00);
    tolua_function(tolua_S,"getName",tolua_VOXCHRONICLE_Map_getName00);
+   tolua_function(tolua_S,"getIdentifier",tolua_VOXCHRONICLE_Map_getIdentifier00);
    tolua_function(tolua_S,"isBossStage",tolua_VOXCHRONICLE_Map_isBossStage00);
    tolua_function(tolua_S,"changeBackgroundImage",tolua_VOXCHRONICLE_Map_changeBackgroundImage00);
    tolua_variable(tolua_S,"__IRegister__",tolua_get_Map___IRegister__,NULL);
