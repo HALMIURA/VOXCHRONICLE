@@ -1,8 +1,13 @@
+require("concat")
+require("timezone")
 -- 死亡時メッセージ
---死亡時（全ステージ共通部分）
 return function(map, characterManager, enemyManager)
   local chara = characterManager:getCurrentCharacter():getName()
-  return {
+  local mapId = map:getIdentifier()
+  local currentTimeZone = getCurrentTimeZone()
+
+  --死亡時（全ステージ共通部分）
+  local commonPattern =  {
     string.format("%sは　とうとう　しんでしまった", chara), -- ${chara}とか書いてあるのは使えないので、この行と同じ感じに書き換えてください
     "おお${chara}よ　しんでしまうとは　なさけない",
     "${chara}は　みちなかばで　おわった",
@@ -93,96 +98,131 @@ return function(map, characterManager, enemyManager)
     "ご　りんじゅう",
     "むこうに　おはなばたけが　みえます",
     "${chara}！　おうとうしろ　${chara}ーーーーー！"
-    }
---[[
---各ステージ部分
---1a
-return {
-    "だいじょうぶ　すこしずつ　なれていこう",
-    "",
-    "",
-    "チュートリアルは　みてくれた？",
-    "まあ　そういうことも　あるさ",
   }
---1b昼
-return {
-    "さすがハード　ひとすじなわでは　いかないってかんじ？",
-    "まさか　いきなりハードを　えらんだのでは？",
-    "おいおい　こんなのまだ　じょのくち　だぜ？",
-    "あまくみては　いけないな...",
-    "しょうしょう　あそびすぎたか",
-  }
---2a
-return {
-    "やられても　くじけるな",
-    "めげずに　がんばって",
-    "もういちど　ちょうせんしよう",
-    "パワーチャージを　つかってみよう",
-    "",
-  }
---2b
-return {
-    "くらいよー　せまいよー　こわいよー",
-    "ぐぅ．．．さすが　てごわい",
-    "",
-    "",
-    "",
-  }
---2c
-return {
-    "こんなの　できねーよー",
-    "むずかしいよう",
-    "さすが　ハード．．．がくっ",
-    "シールドだけじゃ　さばききれない",
-    "",
-  }
---3a
-return {
-    "",
-    "",
-    "",
-    "",
-    "",
-  }
---3b
-return {
-    "",
-    "",
-    "",
-    "",
-    "",
-  }
---3c
-return {
-    "",
-    "",
-    "",
-    "",
-    "",
-  }
---3d
-return {
-    "うちゅうの　もくずと　きえた",
-    "",
-    "",
-    "",
-    "",
-  }
---1b夕暮れ
-return {
-    "たそがれに　しずむ",
-    "",
-    "",
-    "",
-    "",
-  }
---１ｂ夜
-return {
-    "",
-    "",
-    "",
-    "",
-    "",
-  }
-  ]]
+
+  return concat(commonPattern, (function()
+    --各ステージ部分
+
+    --1a
+    if mapId == "1a_simple" then
+      return {
+        "だいじょうぶ　すこしずつ　なれていこう",
+        "",
+        "",
+        "チュートリアルは　みてくれた？",
+        "まあ　そういうことも　あるさ",
+      }
+    end
+
+    --1b昼
+    if mapId == "1b_field" and currentTimeZone == 0 then
+      return {
+        "さすがハード　ひとすじなわでは　いかないってかんじ？",
+        "まさか　いきなりハードを　えらんだのでは？",
+        "おいおい　こんなのまだ　じょのくち　だぜ？",
+        "あまくみては　いけないな...",
+        "しょうしょう　あそびすぎたか",
+      }
+    end
+
+    --2a
+    if mapId == "2a_forest" then
+      return {
+        "やられても　くじけるな",
+        "めげずに　がんばって",
+        "もういちど　ちょうせんしよう",
+        "パワーチャージを　つかってみよう",
+        "",
+      }
+    end
+
+    --2b
+    if mapId == "2b_cave" then
+      return {
+        "くらいよー　せまいよー　こわいよー",
+        "ぐぅ．．．さすが　てごわい",
+        "",
+        "",
+        "",
+      }
+    end
+
+    --2c
+    if mapId == "2c_cyber" then
+      return {
+        "こんなの　できねーよー",
+        "むずかしいよう",
+        "さすが　ハード．．．がくっ",
+        "シールドだけじゃ　さばききれない",
+        "",
+      }
+    end
+
+    --3a
+    if mapId == "3a_ruin" then
+      return {
+        "",
+        "",
+        "",
+        "",
+        "",
+      }
+    end
+
+    --3b
+    if mapId == "3b_castle" then
+      return {
+        "",
+        "",
+        "",
+        "",
+        "",
+      }
+    end
+
+    --3c
+    if mapId == "3c_ocean" then
+      return {
+        "",
+        "",
+        "",
+        "",
+        "",
+      }
+    end
+
+    --3d
+    if mapId == "3d_space" then
+      return {
+        "うちゅうの　もくずと　きえた",
+        "",
+        "",
+        "",
+        "",
+      }
+    end
+
+    --1b夕暮れ
+    if mapId == "1b_field" and currentTimeZone == 1 then
+      return {
+        "たそがれに　しずむ",
+        "",
+        "",
+        "",
+        "",
+      }
+    end
+
+    --１ｂ夜
+    if mapId == "1b_field" and currentTimeZone == 2 then
+      return {
+        "",
+        "",
+        "",
+        "",
+        "",
+      }
+    end
+  end
+  )())
 end
