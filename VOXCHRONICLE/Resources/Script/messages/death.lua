@@ -105,6 +105,7 @@ return function(map, characterManager, enemyManager)
       "くっ．．．　つよすぎる．．．",
       "あび　きょうかん",
       "どうして　こうなった？",
+      "完",
       "まものは　たのしそうに　わらっている",
     }
     local extraPattern = {}
